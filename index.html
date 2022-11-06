@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+   <section class="section">
+      <div class="formulario">
+         <form action="/funcionario_animal" method="post">
+            <p>Quantidade de consultas realizadas por um veterinário em um animal: </p>
+            <p>Nome do animal: </p>
+            <input type="text" name="animal">
+            <p>Nome do funcionário: </p>
+            <input type="text" name="funcionario_animal">
+            <button type="submit">Enviar</button>
+         </form>
+      </div>
+      <div class="formulario">
+         <form action="/funcionario_banho" method="post">
+            <p>Retorna o nome do funcionário que realizou banho do animal na data x: </p>
+            <p>Nome do animal: </p>
+            <input type="text" name="animal_func">
+            <p>data: </p>
+            <input type="text" name="data">
+            <button type="submit">Enviar</button>
+         </form>
+      </div>
+   </section>
+   <section>
+      <div class="formulario">
+         <form action="/nome_func" method="post">
+            <p>Nome funcionarios: </p>
+            <p>Insira V ou F: </p>
+            <input type="text" name="vet_func">
+            <button type="submit">Enviar</button>
+         </form>
+      </div>
+      <div class="formulario">
+         <form action="/pessoas" method="post">
+            <p>Pessoas: </p>
+            <p>Insira o porte P, M ou G: </p>
+            <input type="text" name="porte_animal">
+            <button type="submit">Enviar</button>
+         </form>
+      </div>
+   </section>
+   <section>
+      <div class="formulario">
+         <form action="/preco_tam" method="post">
+            <p>funcao que aplica preço de acordo com tamanho do cachorro: </p>
+            <p>Tosa [1]: </p>
+            <input type="text" name="tosa">
+            <p>Insira o porte P, M ou G: </p>
+            <input type="text" name="tamanho">
+            <button type="submit">Enviar</button>
+         </form>
+      </div>
+      <div id="animal" class="formulario">
+         <form action="/insere_animal" method="post">
+            <p>Insere animal: </p>
+            <p>Nome animal: </p>
+            <input type="text" name="nome_animal">
+            <p>Id pessoa: </p>
+            <input type="text" name="id_pessoa">
+            <p>Tamanho: </p>
+            <input type="text" name="tam">
+            <p>raca: </p>
+            <input type="text" name="raca_animal">
+            <button type="submit">Enviar</button>
+         </form>
+      </div>
+   </section>
+   <section>
+      <div class="formulario">
+
+         <form action="/insere_pessoa" method="post">
+            <p>Insere Pessoa: </p>
+            <p>Nome pessoa: </p>
+            <input type="text" name="nome">
+            <p>endereco: </p>
+            <input type="text" name="endereco">
+            <button type="submit">Enviar</button>
+         </form>
+      </div>
+   
+      <div class="formulario">
+         <form action="/valor_dia" method="post">
+            <p>Valor faturado no dia com banhos: </p>
+            <p>Data: </p>
+            <input type="text" name="data">
+            <button type="submit">Enviar</button>
+         </form>
+      </div>
+   </section>
+ 
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+.formulario {
+    width: 400px;
+    height: 300px;
+    background-color: rgb(193, 237, 248);
+    padding: 10px;
+    border-radius: 10%;
+    margin: 10px;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#animal{
+    width: 400px;
+    height: 400px;
+}
+
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(99, 98, 98);
+    align-items: center;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input{
+    height: 30px;
+    width: 150px;
+    border: none;
+    padding: 5px;
+    border-radius: 50px;
+}
