@@ -1,6 +1,6 @@
 .formulario {
     width: 400px;
-    height: 300px;
+    height: 350px;
     background-color: rgb(193, 237, 248);
     padding: 10px;
     border-radius: 10%;
@@ -12,14 +12,20 @@
 
 #animal{
     width: 400px;
-    height: 400px;
+    height: 490px;
 }
 
-div{
+form {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+
+        padding: 50px;
+
 }
+
+
 
 body{
     margin: 0;
@@ -40,4 +46,29 @@ input{
     border: none;
     padding: 5px;
     border-radius: 50px;
+    border-color: cornflowerblue;
 }
+
+p{
+    
+    font-family: 'Poppins', sans-serif;
+}
+
+button{
+    margin-top: 20px;
+    height: 30px;
+    width: 100px;
+    background-color: rgb(184, 231, 250);
+    color: cornflowerblue;
+    border-color: cornflowerblue;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+button:hover{
+    width: 110px;
+
+}
+
+
+

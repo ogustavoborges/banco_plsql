@@ -11,8 +11,6 @@ using (id_funcionario)
 where a.nome = p_nome_animal and b.data_banho = p_data; 
 end;
 
-
-
 create or replace procedure porte_pessoa(p_tam in varchar2) is
 tam varchar2(2);
 cursor p_info is
@@ -29,8 +27,6 @@ FOR r_pessoa IN p_info LOOP
 END LOOP; 
 end;
 
-
-
 create or replace function atendi_animal (p_nome_animal in varchar2, p_nome_vet varchar2)
     return number 
     is
@@ -46,7 +42,6 @@ using (id_veterinario)
 where a.nome = p_nome_animal and v.nome = p_nome_vet; 
 return t_consulta;
 end;
-
 
 create or replace function get_funcionario(p_char IN CHAR) RETURN sys_refcursor IS
     rf_cur sys_refcursor;
@@ -106,3 +101,29 @@ BEGIN
 
             status:= 'Animal inserido com sucesso!';
 END;
+
+Não permite inserir tamanho do animal caso não seja P, M ou G
+create or replace trigger verifica_tamanho
+before insert or update of tamanho
+on animal
+for each row
+begin
+
+    CASE 
+    WHEN (UPPER(:new.tamanho) = 'P') or (UPPER(:new.tamanho) = 'M') or (UPPER(:new.tamanho) = 'G') 
+    then dbms_output.put_line('tamanho valido');
+    else RAISE_APPLICATION_ERROR(-20000, 'Erro');
+    end case;
+end;
+
+create or replace trigger sal_func
+BEFORE
+INSERT OR UPDATE OF salario
+on funcionario_banho
+for each row
+DECLARE
+BEGIN
+    if :new.salario < 1500 or :new.salario > 2500 then
+     RAISE_APPLICATION_ERROR(-20601,'Salário inválido.');
+    end if;
+End;

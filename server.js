@@ -296,6 +296,33 @@ app.post('/insere_animal', (req, res) => {
     animal(req.body.nome_animal, req.body.id_pessoa, req.body.tam, req.body.raca_animal);
 });
 
+//Insere animal
+app.post('/insere_funcionario', (req, res) => {
+    async function funcionario(nome,salario) {
+        let connection;
+        salario =  parseFloat(salario);
+        connection = await oracledb.getConnection(defaultpool);
+        try {
+           const result =  await connection.execute(
+                `BEGIN
+                reg_func(:nome,:salario,:p3);
+             END;`,
+                {
+                    nome,
+                    salario,
+                    p3: { dir: oracledb.BIND_OUT, type: oracledb.STRING}
+                }).catch(err => res.send("<h1>" +  err + "</h1>"));
+
+                let retorno = JSON.stringify(objToString(result.outBinds));
+                res.send("<h1>" + retorno.replace(/"/g, '') + "</h1>");
+        } catch (error) {
+            alert(error);
+        }
+    }
+
+   funcionario(req.body.nome,req.body.salario);
+});
+
 
 app.listen(port, () => {
     console.log('running express');
