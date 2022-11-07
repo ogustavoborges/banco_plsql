@@ -1,0 +1,36 @@
+select * from funcionario_banho;
+select * from pessoa;
+select * from animal;
+select * from veterinario;
+select * from banho;
+select * from consulta;
+
+commit;
+
+
+
+Não permite inserir tamanho do animal caso não seja P, M ou G
+create or replace trigger verifica_tamanho
+before insert or update of tamanho
+on animal
+for each row
+begin
+
+    CASE 
+    WHEN (UPPER(:new.tamanho) = 'P') or (UPPER(:new.tamanho) = 'M') or (UPPER(:new.tamanho) = 'G') 
+    then dbms_output.put_line('tamanho valido');
+    else RAISE_APPLICATION_ERROR(-20000, 'Erro');
+    end case;
+end;
+
+create or replace trigger sal_func
+BEFORE
+INSERT OR UPDATE OF salario
+on funcionario_banho
+for each row
+DECLARE
+BEGIN
+    if :new.salario < 1500 or :new.salario > 2500 then
+     RAISE_APPLICATION_ERROR(-20601,'Salário inválido.');
+    end if;
+End;
