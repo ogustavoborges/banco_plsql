@@ -17,16 +17,18 @@
    <section class="section">
       <div class="formulario">
          <form action="/funcionario_animal" method="post">
+            <p class="funcao">FUNÇÃO</p>
             <p>Quantidade de consultas realizadas por um veterinário em um animal: </p>
             <p>Nome do animal: </p>
             <input type="text" name="animal">
-            <p>Nome do funcionário: </p>
+            <p>Nome do veterinário: </p>
             <input type="text" name="funcionario_animal">
             <button type="submit">Enviar</button>
          </form>
       </div>
       <div class="formulario">
          <form action="/funcionario_banho" method="post">
+            <p class="procedure">PROCEDURE</p>
             <p>Retorna o nome do funcionário que realizou banho do animal na data x: </p>
             <p>Nome do animal: </p>
             <input type="text" name="animal_func">
@@ -39,7 +41,8 @@
    <section>
       <div class="formulario">
          <form action="/nome_func" method="post">
-            <p>Nome funcionarios: </p>
+            <p class="funcao">FUNÇÃO</p>
+            <p>Lista nomes dos veterinários ou funcionários: </p>
             <p>Insira V ou F: </p>
             <input type="text" name="vet_func">
             <button type="submit">Enviar</button>
@@ -47,8 +50,9 @@
       </div>
       <div class="formulario">
          <form action="/pessoas" method="post">
-            <p>Pessoas: </p>
-            <p>Insira o porte P, M ou G: </p>
+            <p class="procedure">PROCEDURE</p>
+            <p>Informações de todas as pessoas que tem animais de determinado porte </p>
+            <p>Insira o porte do animal: P, M ou G </p>
             <input type="text" name="porte_animal">
             <button type="submit">Enviar</button>
          </form>
@@ -57,60 +61,68 @@
    <section>
       <div class="formulario">
          <form action="/preco_tam" method="post">
-            <p>funcao que aplica preço de acordo com tamanho do cachorro: </p>
-            <p>Tosa [1]: </p>
+            <p class="funcao">FUNÇÃO</p>
+            <p>Exibe o preço de acordo com tamanho do animal: </p>
+            <p> Somente banho [0] | Banho e tosa [1]  </p>
             <input type="text" name="tosa">
             <p>Insira o porte P, M ou G: </p>
             <input type="text" name="tamanho">
             <button type="submit">Enviar</button>
          </form>
       </div>
-      <div id="animal" class="formulario">
-         <form action="/insere_animal" method="post">
-            <p>Insere animal: </p>
-            <p>Nome animal: </p>
-            <input type="text" name="nome_animal">
-            <p>Id pessoa: </p>
-            <input type="text" name="id_pessoa">
-            <p>Tamanho: </p>
-            <input type="text" name="tam">
-            <p>raca: </p>
-            <input type="text" name="raca_animal">
-            <button type="submit">Enviar</button>
-         </form>
-      </div>
-   </section>
-   <section>
       <div class="formulario">
 
          <form action="/insere_pessoa" method="post">
+            <p class="procedure">PROCEDURE</p>
             <p>Insere Pessoa: </p>
             <p>Nome pessoa: </p>
             <input type="text" name="nome">
-            <p>endereco: </p>
+            <p>Endereco: </p>
             <input type="text" name="endereco">
             <button type="submit">Enviar</button>
          </form>
       </div>
    
+   </section>
+   <section>
       <div class="formulario">
          <form action="/valor_dia" method="post">
-            <p>Valor faturado no dia com banhos: </p>
+            <p class="funcao">FUNÇÃO</p>
+            <p>Valor faturado no dia com banhos e tosas: </p>
             <p>Data: </p>
             <input type="text" name="data">
             <button type="submit">Enviar</button>
          </form>
       </div>
+      <div class="formulario">
+         <form action="/insere_funcionario" method="post">
+            <p class="procedure">PROCEDURE</p>
+            <p>Inserir funcionário: </p>
+            <p>Nome: </p>
+            <input type="text" name="nome">
+            <p>Salário: </p>
+            <input type="text" name="salario">
+            <button type="submit">Enviar</button>
+         </form>
+      </div>
+   
    </section>
  
    <section>
-   <div class="formulario">
-      <form action="/insere_funcionario" method="post">
-         <p>Inserir funcionário: </p>
-         <p>Nome: </p>
-         <input type="text" name="nome">
-         <p>Salário: </p>
-         <input type="text" name="salario">
+  
+ 
+   <div id="animal" class="formulario">
+      <form action="/insere_animal" method="post">
+         <p class="procedure">PROCEDURE</p>
+         <p>Insere animal: </p>
+         <p>Nome animal: </p>
+         <input type="text" name="nome_animal">
+         <p>Id pessoa: </p>
+         <input type="text" name="id_pessoa">
+         <p>Tamanho: </p>
+         <input type="text" name="tam">
+         <p>Raça: </p>
+         <input type="text" name="raca_animal">
          <button type="submit">Enviar</button>
       </form>
    </div>

@@ -4,11 +4,13 @@ const bodyParser = require("body-parser")
 const port = 3000;
 const oracledb = require('oracledb');
 const { AQ_DEQ_NAV_NEXT_MSG } = require("oracledb");
+const erro = `erro inesperado`;
 const defaultpool = {
     user: "usuario",
     password: "senha",
     connectString: "host"
 };
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -62,8 +64,9 @@ app.post('/funcionario_banho', (req, res) => {
             retorno = JSON.stringify(objToString(retorno));
             console.log(result.outBinds);
             res.send("<h1>Funcionario(a): " + retorno.replace(/"/g, '') + "</h1>");
-        } catch (error) {
-            alert(error);
+        } catch (err) {
+            console.log(erro);
+            return
         }
     }
     func_banho(req.body.animal_func, req.body.data);
@@ -111,8 +114,9 @@ app.post('/pessoas', (req, res) => {
             nomes.map(nome => res.write("<h1>" + nome + "</h1>"));
             res.end();
             // "<h1>Nomes: " + nomes+ "</h1>"
-        } catch (error) {
-            alert(error);
+        } catch (err) {
+            console.log(erro);
+            return
         }
     }
     porte_animal(req.body.porte_animal);
@@ -139,8 +143,9 @@ app.post('/funcionario_animal', (req, res) => {
             retorno = JSON.stringify(objToString(retorno));
             console.log(result.outBinds);
             res.send("<h1>Total de consultas realizadas: " + retorno.replace(/"/g, '') + "</h1>");
-        } catch (error) {
-            alert(error);
+        } catch (err) {
+            console.log(erro);
+            return
         }
     }
 
@@ -175,8 +180,9 @@ app.post('/nome_func', (req, res) => {
             await resultSet1.close();
 
             res.send("<h1>Nomes: " + rows1 + "</h1>");
-        } catch (error) {
-            alert(error);
+        } catch (err) {
+            console.log(erro);
+            return
         }
     }
     nome_func(req.body.vet_func);
@@ -202,8 +208,9 @@ app.post('/preco_tam', (req, res) => {
 
             let retorno = JSON.stringify(objToString(result.outBinds));
             res.send("<h1>Valor: R$ " + retorno.replace(/"/g, '') + "</h1>");
-        } catch (error) {
-            alert(error);
+        } catch (err) {
+            console.log(erro);
+            return
         }
     }
    valor(req.body.tosa, req.body.tamanho);
@@ -227,8 +234,9 @@ app.post('/valor_dia', (req, res) => {
     
             let retorno = JSON.stringify(objToString(result.outBinds));
             res.send("<h1>Total faturado no dia: R$ " + retorno.replace(/"/g, '') + "</h1>");
-        } catch (error) {
-            alert(error);
+        } catch (err) {
+            console.log(erro);
+            return
         }
     }
    valor_dia(req.body.data);
@@ -258,8 +266,9 @@ app.post('/insere_pessoa', (req, res) => {
                 res.send("<h1>" + retorno.replace(/"/g, '') + "</h1>");
 
 
-        } catch (error) {
-            alert(error);
+        } catch (err) {
+            console.log(erro);
+            return
         }
     }
 
@@ -288,8 +297,9 @@ app.post('/insere_animal', (req, res) => {
 
                 let retorno = JSON.stringify(objToString(result.outBinds));
                 res.send("<h1>" + retorno.replace(/"/g, '') + "</h1>");
-        } catch (error) {
-            alert(error);
+        } catch (err) {
+            console.log(erro);
+            return
         }
     }
 
@@ -315,8 +325,9 @@ app.post('/insere_funcionario', (req, res) => {
 
                 let retorno = JSON.stringify(objToString(result.outBinds));
                 res.send("<h1>" + retorno.replace(/"/g, '') + "</h1>");
-        } catch (error) {
-            alert(error);
+        } catch (err) {
+            console.log(erro);
+            return
         }
     }
 

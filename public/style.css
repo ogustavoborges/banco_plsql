@@ -1,7 +1,7 @@
 .formulario {
-    width: 400px;
-    height: 350px;
-    background-color: rgb(193, 237, 248);
+    width: 410px;
+    height: 400px;
+    background-color: rgb(254, 255, 255);
     padding: 10px;
     border-radius: 10%;
     margin: 10px;;
@@ -10,9 +10,23 @@
     justify-content: center;
 }
 
+div{
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.procedure{
+    color: rgb(1, 143, 25);
+    font-weight: bold;
+}
+
+.funcao{
+    color:  rgb(232, 151, 37);;
+    font-weight: bold; 
+}
+
 #animal{
     width: 400px;
-    height: 490px;
+    height: 560px;
 }
 
 form {
@@ -20,9 +34,6 @@ form {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
-        padding: 50px;
-
 }
 
 
@@ -30,7 +41,7 @@ form {
 body{
     margin: 0;
     padding: 0;
-    background-color: rgb(99, 98, 98);
+    background-color: #f0f2f5;
     align-items: center;
 }
 
@@ -43,30 +54,34 @@ section{
 input{
     height: 30px;
     width: 150px;
-    border: none;
-    padding: 5px;
+    padding: 5px 7px;
     border-radius: 50px;
     border-color: cornflowerblue;
+    border: 1px solid #dddfe2;
 }
 
-p{
-    
+p,h1{
+    text-align: center;
     font-family: 'Poppins', sans-serif;
+    color: black;
 }
 
 button{
     margin-top: 20px;
     height: 30px;
     width: 100px;
-    background-color: rgb(184, 231, 250);
+    background-color: transparent;
     color: cornflowerblue;
     border-color: cornflowerblue;
     border-radius: 50px;
+    border-style: solid;
     cursor: pointer;
 }
 
 button:hover{
     width: 110px;
+    background-color: cornflowerblue;
+    color: #f0f2f5;
 
 }
 
